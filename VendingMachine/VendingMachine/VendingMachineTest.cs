@@ -16,7 +16,8 @@ namespace VendingMachine
         [TestMethod()]
         public void acceptACoin()
         {
-            Assert.AreEqual(0.25m, VM.insertCoin("quarter"));
+            VM.insertCoin("quarter");
+            Assert.AreEqual(1, VM.getQuarters() );
         }
     }
 }

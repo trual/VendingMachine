@@ -17,16 +17,48 @@ namespace VendingMachine
             {"quarter", 0.25m}
         };
 
+        //current amount for the customer
+        private decimal currentAmount = 0;
 
-        public int quarters = 0;
+        //amount of coins the vending machine has
+        private int quarters = 0;
 
-        public decimal insertCoin(string coin)
+
+        //Updates the customers current amount
+        //updates the coins the machine has
+        public void insertCoin(string coin)
         {
           
             if (_coins.ContainsKey(coin)){
-                return _coins[coin];
+
+                currentAmount += _coins[coin];
+                switch (coin)
+                {
+                    case "quarter":
+                        quarters += 1;
+                        break;
+
+
+                    default:
+                        Console.WriteLine("Invalid selection. Please select 1, 2, or 3.");
+                        break;
+
+                }
             }
-            return 0.0m;
+            else
+            {
+                //throw invalid here
+                
+            }
+            
         }
+
+        public int getQuarters()
+        {
+            return quarters;
+        }
+
+
+
     }
 }
