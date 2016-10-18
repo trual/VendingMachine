@@ -8,11 +8,12 @@ namespace VendingMachine
 {
     class VendingMachine
     {
+
         Bank bank = new Bank();
 
-        public decimal insertCoin()
+        public decimal insertCoin(string coin)
         {
-           return bank.insertCoin();
+           return bank.insertCoin(coin);
         }
     }
 }
