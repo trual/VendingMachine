@@ -22,7 +22,8 @@ namespace VendingMachine
 
         //amount of coins the vending machine has
         private int quarters = 0;
-
+        private int nickels = 0;
+        private int dimes = 0;
 
         //Updates the customers current amount
         //updates the coins the machine has
@@ -34,10 +35,17 @@ namespace VendingMachine
                 currentAmount += _coins[coin];
                 switch (coin)
                 {
+                    
+                    case "nickel":
+                        nickels += 1;
+                        break;
+                    case "dime":
+                        dimes += 1;
+                        break;
                     case "quarter":
                         quarters += 1;
                         break;
-
+                  
 
                     default:
                         Console.WriteLine("Invalid selection. Please select 1, 2, or 3.");
@@ -53,6 +61,16 @@ namespace VendingMachine
             
         }
 
+
+        public int getNickels()
+        {
+            return nickels;
+        }
+
+        public int getDimes()
+        {
+            return dimes;
+        }
         public int getQuarters()
         {
             return quarters;
