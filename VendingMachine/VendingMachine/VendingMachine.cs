@@ -74,7 +74,13 @@ namespace VendingMachine
         //update display
         public void updateDisplay()
         {
-            display.updateDisplay(getCurrentAmount());
+            if (checkExactChange())
+            {
+                display.exactChange();
+            }
+            else {
+                display.updateDisplay(getCurrentAmount());
+            }
         }
 
 
@@ -102,6 +108,33 @@ namespace VendingMachine
             return bank.getCurrentAmount();
         }
 
+        
+        
+        
+        //check exact change
+        //because or vending machine only takes coins there
+        //will not be a senario where we owe > .20 without enough
+        //coins to cover. Therefore our machine always needs
+        //At least 4 nickels or a dime and 2 nickels.
+        public bool checkExactChange()
+        {
+            if (getDimes() == 0 && getNickels() < 4)
+            {
+                //need exact change
+                display.exactChange();
+                return true;
+            }
+            else if (getNickels() < 2)
+            {
+                //need exact
+                display.exactChange();
+                return true;
+            }
+            return false;
+        }
+        
+        
+        
         //input
 
         public void takeInput(string input)
@@ -128,6 +161,8 @@ namespace VendingMachine
             }
             // need to check if return coins
         }
+
+
     }
 }
 

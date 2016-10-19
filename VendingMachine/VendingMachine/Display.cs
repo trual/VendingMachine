@@ -50,5 +50,10 @@ namespace VendingMachine
         {
             onScreen = "Invalid Input";
         }
+
+        public void exactChange()
+        {
+            onScreen = "EXACT CHANGE ONLY";
+        }
     }
 }

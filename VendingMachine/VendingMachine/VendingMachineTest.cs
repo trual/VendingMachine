@@ -161,6 +161,18 @@ namespace VendingMachine
             Assert.AreEqual("SOLD OUT", VM.getDisplay());
         }
 
+        [TestMethod()]
+        public void exactChange4Nickels()
+        {
+            VM.insertCoin("quarter");
+            VM.insertCoin("quarter");
+            VM.insertCoin("quarter");
+            VM.pressItem("candy");
+            Assert.AreEqual(dimes - 1, VM.getDimes());
+            VM.updateDisplay();
+            Assert.AreEqual("EXACT CHANGE ONLY", VM.getDisplay());
+        }
+
     }
 }
 
