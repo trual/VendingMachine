@@ -32,6 +32,11 @@ namespace VendingMachine
         {
             return bank.getQuarters();
         }
+
+        public decimal getCurrentAmount()
+        {
+            return bank.getCurrentAmount();
+        }
     }
 }
 

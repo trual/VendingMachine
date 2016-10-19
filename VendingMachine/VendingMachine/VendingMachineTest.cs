@@ -18,14 +18,17 @@ namespace VendingMachine
         {
             VM.insertCoin("quarter");
             Assert.AreEqual(1, VM.getQuarters() );
+            Assert.AreEqual(0.25m, VM.getCurrentAmount());
         }
         [TestMethod()]
         public void acceptAnyCoin()
         {
             VM.insertCoin("nickel");
             Assert.AreEqual(1, VM.getNickels());
+            Assert.AreEqual(0.05m, VM.getCurrentAmount());
             VM.insertCoin("dime");
             Assert.AreEqual(1, VM.getDimes());
+            Assert.AreEqual(0.15m, VM.getCurrentAmount());
         }
     }
 }

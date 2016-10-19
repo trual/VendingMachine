@@ -76,7 +76,10 @@ namespace VendingMachine
             return quarters;
         }
 
-
+        public decimal getCurrentAmount()
+        {
+            return currentAmount;
+        }
 
     }
 }
