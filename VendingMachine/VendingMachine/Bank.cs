@@ -92,7 +92,15 @@ namespace VendingMachine
             currentAmount -= itemAmount;
         }
 
-
+        //check coin
+        public bool checkCoin(string input)
+        {
+            if (_coins.ContainsKey(input))
+            {
+                return true;
+            }
+            return false;
+        }
 
 
 

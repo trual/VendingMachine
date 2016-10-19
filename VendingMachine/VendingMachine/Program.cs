@@ -18,8 +18,9 @@ namespace VendingMachine
             while (turnOff != "TURN OFF")
             {
                 Console.WriteLine(VM.getDisplay());
-                Console.ReadLine();
-
+                string input = Console.ReadLine();
+                VM.takeInput(input);
+                
             }
 
         }

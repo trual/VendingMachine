@@ -98,11 +98,20 @@ namespace VendingMachine
             return bank.getCurrentAmount();
         }
 
-
+        //input
 
         public void takeInput(string input)
         {
+            // need to check if coin
+            if (bank.checkCoin(input))
+            {
+                insertCoin(input);
+                display.updateDisplay(bank.getCurrentAmount());
+            }
 
+            // need to check if item
+
+            // need to check if return coins
         }
     }
 }
