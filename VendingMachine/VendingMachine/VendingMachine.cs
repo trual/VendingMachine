@@ -97,6 +97,13 @@ namespace VendingMachine
         {
             return bank.getCurrentAmount();
         }
+
+
+
+        public void takeInput(string input)
+        {
+
+        }
     }
 }
 
