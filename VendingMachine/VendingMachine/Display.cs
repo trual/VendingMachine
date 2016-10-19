@@ -18,6 +18,10 @@ namespace VendingMachine
             {
                 onScreen = "INSERT COIN";
             }
+            if (currentAmount > 0.0m)
+            {
+                onScreen = currentAmount.ToString();
+            }
             
         }
 

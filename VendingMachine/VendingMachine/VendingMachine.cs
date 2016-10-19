@@ -17,6 +17,7 @@ namespace VendingMachine
         public void insertCoin(string coin)
         {
            bank.insertCoin(coin);
+           display.updateDisplay(getCurrentAmount());
         }
 
         public int getNickels()
