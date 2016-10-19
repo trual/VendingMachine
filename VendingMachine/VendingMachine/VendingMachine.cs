@@ -20,6 +20,32 @@ namespace VendingMachine
            display.updateDisplay(getCurrentAmount());
         }
 
+        //return coins button
+        //returns any coins in current amount
+        //updates display
+        public void returnCoin()
+        {
+            bank.removeCoins();
+            display.updateDisplay(getCurrentAmount());
+        }
+       
+
+
+
+
+        //returns the display screen
+        public string getDisplay()
+        {
+            return display.getDisplay();
+        }
+
+
+
+
+
+
+        //get functions
+
         public int getNickels()
         {
             return bank.getNickels();
@@ -38,13 +64,6 @@ namespace VendingMachine
         public decimal getCurrentAmount()
         {
             return bank.getCurrentAmount();
-        }
-
-
-        //returns the display screen
-        public string getDisplay()
-        {
-            return display.getDisplay();
         }
     }
 }

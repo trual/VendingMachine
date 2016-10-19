@@ -49,6 +49,21 @@ namespace VendingMachine
             Assert.AreEqual(0.15m, VM.getCurrentAmount());
             Assert.AreEqual("0.15", VM.getDisplay());
         }
+
+        //coin return
+        [TestMethod()]
+        public void returnMyQuarter()
+        {
+            VM.insertCoin("quarter");
+            Assert.AreEqual(1, VM.getQuarters());
+            Assert.AreEqual(0.25m, VM.getCurrentAmount());
+            Assert.AreEqual("0.25", VM.getDisplay());
+            VM.returnCoin();
+            Assert.AreEqual(0.0m, VM.getCurrentAmount());
+            Assert.AreEqual(0, VM.getQuarters());
+            Assert.AreEqual("INSERT COIN", VM.getDisplay());
+
+        }
     }
 }
 

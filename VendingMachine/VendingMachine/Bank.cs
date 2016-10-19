@@ -59,8 +59,20 @@ namespace VendingMachine
                 
             }
 
+        }
 
-            
+
+        //empties the customers coins
+        public void removeCoins()
+        {
+            while ( currentAmount > 0)
+            {
+                if (currentAmount >= 0.25m && quarters > 0)
+                {
+                    quarters -= 1;
+                    currentAmount -= 0.25m;
+                }
+            }
         }
 
 

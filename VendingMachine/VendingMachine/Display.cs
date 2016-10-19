@@ -11,7 +11,7 @@ namespace VendingMachine
     {
         private string onScreen = "INSERT COIN";
         
-
+        //updates what should be displayed
         public void updateDisplay(decimal currentAmount)
         {
             if (currentAmount == 0.0m)
