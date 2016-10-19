@@ -71,7 +71,11 @@ namespace VendingMachine
             return display.getDisplay();
         }
 
-
+        //update display
+        public void updateDisplay()
+        {
+            display.updateDisplay(getCurrentAmount());
+        }
 
 
 

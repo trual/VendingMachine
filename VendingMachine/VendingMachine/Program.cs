@@ -21,6 +21,12 @@ namespace VendingMachine
                 string input = Console.ReadLine();
                 VM.takeInput(input);
                 
+                if (VM.getDisplay() == "THANK YOU")
+                {
+                    Console.WriteLine(VM.getDisplay());
+                    Console.ReadLine();
+                    VM.updateDisplay();
+                }
             }
 
         }
