@@ -35,19 +35,26 @@ namespace VendingMachine
         //press inventory items
         public void pressItem(string item)
         {
-           if (inventory.pressItem(item, getCurrentAmount()))
+            if (inventory.getQuantity(item) != 0)
             {
-                //the item is inventory and has been removed
-                //now its time to remove the money from the bank
-                bank.pressItem(inventory.items[item]);
-                bank.removeCoins();
-                //sets on screen value to thankyou
-                display.thankYou();
+                if (inventory.pressItem(item, getCurrentAmount()))
+                {
+                    //the item is inventory and has been removed
+                    //now its time to remove the money from the bank
+                    bank.pressItem(inventory.items[item]);
+                    bank.removeCoins();
+                    //sets on screen value to thankyou
+                    display.thankYou();
 
+                }
+                else
+                {
+                    display.price(inventory.items[item]);
+                }
             }
-           else
+            else
             {
-                display.price(inventory.items[item]);
+                display.soldOut();
             }
         }
 

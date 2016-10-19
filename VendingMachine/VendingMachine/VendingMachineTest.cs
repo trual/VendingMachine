@@ -145,6 +145,22 @@ namespace VendingMachine
             Assert.AreEqual("1.00", VM.getDisplay());
         }
 
+
+        [TestMethod()]
+        public void soldOut()
+        {
+
+            VM.insertCoin("quarter");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.pressItem("chips");
+            Assert.AreEqual(0, VM.getQuantity("chips"));
+            Assert.AreEqual(0.0m, VM.getCurrentAmount());
+            VM.pressItem("chips");
+            Assert.AreEqual("SOLD OUT", VM.getDisplay());
+        }
+
     }
 }
 

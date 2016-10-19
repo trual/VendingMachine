@@ -40,5 +40,10 @@ namespace VendingMachine
         {
             onScreen = item.ToString();
         }
+
+        public void soldOut()
+        {
+            onScreen = "SOLD OUT";
+        }
     }
 }
