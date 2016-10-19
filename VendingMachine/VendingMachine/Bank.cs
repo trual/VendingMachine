@@ -21,9 +21,9 @@ namespace VendingMachine
         private decimal currentAmount = 0;
 
         //amount of coins the vending machine has
-        private int quarters = 0;
-        private int nickels = 0;
-        private int dimes = 0;
+        private int quarters = 5;
+        private int nickels = 5;
+        private int dimes = 5;
 
         //Updates the customers current amount
         //updates the coins the machine has

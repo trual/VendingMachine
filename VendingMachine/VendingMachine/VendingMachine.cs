@@ -40,6 +40,7 @@ namespace VendingMachine
                 //the item is inventory and has been removed
                 //now its time to remove the money from the bank
                 bank.pressItem(inventory.items[item]);
+                returnCoin();
 
             }
         }

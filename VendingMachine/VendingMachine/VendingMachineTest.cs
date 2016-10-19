@@ -10,6 +10,22 @@ namespace VendingMachine
     [TestClass()]
     public class VendingMachineTest
     {
+
+
+        int nickels;
+        int dimes;
+        int quarters;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            nickels = VM.getNickels();
+            dimes = VM.getDimes();
+            quarters = VM.getQuarters();
+        }
+
+
+
         VendingMachine VM = new VendingMachine();
 
         //this will test wether or not we can accept a coin
@@ -17,17 +33,17 @@ namespace VendingMachine
         public void acceptACoin()
         {
             VM.insertCoin("quarter");
-            Assert.AreEqual(1, VM.getQuarters() );
+            Assert.AreEqual(quarters + 1, VM.getQuarters() );
             Assert.AreEqual(0.25m, VM.getCurrentAmount());
         }
         [TestMethod()]
         public void acceptAnyCoin()
         {
             VM.insertCoin("nickel");
-            Assert.AreEqual(1, VM.getNickels());
+            Assert.AreEqual(nickels + 1, VM.getNickels());
             Assert.AreEqual(0.05m, VM.getCurrentAmount());
             VM.insertCoin("dime");
-            Assert.AreEqual(1, VM.getDimes());
+            Assert.AreEqual(dimes + 1, VM.getDimes());
             Assert.AreEqual(0.15m, VM.getCurrentAmount());
         }
         //test initial display
@@ -40,12 +56,13 @@ namespace VendingMachine
         [TestMethod()]
         public void updatedDisplayScreen()
         {
+            
             VM.insertCoin("nickel");
-            Assert.AreEqual(1, VM.getNickels());
+            Assert.AreEqual(nickels + 1, VM.getNickels());
             Assert.AreEqual(0.05m, VM.getCurrentAmount());
             Assert.AreEqual("0.05", VM.getDisplay());
             VM.insertCoin("dime");
-            Assert.AreEqual(1, VM.getDimes());
+            Assert.AreEqual(dimes + 1, VM.getDimes());
             Assert.AreEqual(0.15m, VM.getCurrentAmount());
             Assert.AreEqual("0.15", VM.getDisplay());
         }
@@ -55,12 +72,12 @@ namespace VendingMachine
         public void returnMyQuarter()
         {
             VM.insertCoin("quarter");
-            Assert.AreEqual(1, VM.getQuarters());
+            Assert.AreEqual(quarters + 1, VM.getQuarters());
             Assert.AreEqual(0.25m, VM.getCurrentAmount());
             Assert.AreEqual("0.25", VM.getDisplay());
             VM.returnCoin();
             Assert.AreEqual(0.0m, VM.getCurrentAmount());
-            Assert.AreEqual(0, VM.getQuarters());
+            Assert.AreEqual(quarters, VM.getQuarters());
             Assert.AreEqual("INSERT COIN", VM.getDisplay());
 
         }
@@ -87,6 +104,20 @@ namespace VendingMachine
             VM.pressItem("cola");
             Assert.AreEqual(0, VM.getQuantity("cola"));
         }
+
+        [TestMethod()]
+        public void buySomeCandyAndGetYourMoneyReturned()
+        {
+            VM.insertCoin("quarter");
+            VM.insertCoin("quarter");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.pressItem("candy");
+            Assert.AreEqual(0, VM.getQuantity("candy"));
+            Assert.AreEqual(0.0m, VM.getCurrentAmount());
+
+        }
+
     }
 }
 
