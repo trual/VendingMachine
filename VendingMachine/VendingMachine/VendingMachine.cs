@@ -108,9 +108,11 @@ namespace VendingMachine
                 insertCoin(input);
                 display.updateDisplay(bank.getCurrentAmount());
             }
-
             // need to check if item
-
+            else if (inventory.checkItem(input))
+            {
+                pressItem(input);
+            }
             // need to check if return coins
         }
     }

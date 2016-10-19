@@ -95,11 +95,7 @@ namespace VendingMachine
         //check coin
         public bool checkCoin(string input)
         {
-            if (_coins.ContainsKey(input))
-            {
-                return true;
-            }
-            return false;
+            return _coins.ContainsKey(input);
         }
 
 

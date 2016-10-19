@@ -52,7 +52,7 @@ namespace VendingMachine
            
         }
 
-
+        //returns quatity of items
         public int getQuantity(string item)
         {
             switch (item)
@@ -77,7 +77,11 @@ namespace VendingMachine
             return 0;
         }
 
-
+        public bool checkItem(string input)
+        {
+            return items.ContainsKey(input);
+            
+        }
 
 
     }
