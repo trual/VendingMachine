@@ -45,10 +45,10 @@ namespace VendingMachine
                     case "quarter":
                         quarters += 1;
                         break;
-                  
+                    
 
                     default:
-                        Console.WriteLine("Invalid selection. Please select 1, 2, or 3.");
+                        Console.WriteLine("Invalid selection. Please insert nickel, dime, quarter");
                         break;
 
                 }

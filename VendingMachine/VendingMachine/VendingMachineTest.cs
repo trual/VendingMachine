@@ -30,6 +30,11 @@ namespace VendingMachine
             Assert.AreEqual(1, VM.getDimes());
             Assert.AreEqual(0.15m, VM.getCurrentAmount());
         }
+        [TestMethod()]
+        public void initialDisplayScreen()
+        {
+            Assert.AreEqual("INSERT COIN", VM.getDisplay());
+        }
     }
 }
 
