@@ -117,6 +117,10 @@ namespace VendingMachine
             {
                 pressItem(input);
             }
+            else if (input == "RETURN")
+            {
+                returnCoin();
+            }
             // need to check if return coins
         }
     }
