@@ -132,6 +132,19 @@ namespace VendingMachine
 
         }
 
+        [TestMethod()]
+        public void insuffcientFundsMustInsertAdditionalPylons()
+        {
+            VM.insertCoin("quarter");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.pressItem("cola");
+            Assert.AreEqual(1, VM.getQuantity("cola"));
+            Assert.AreEqual(0.55m, VM.getCurrentAmount());
+            Assert.AreEqual("1.00", VM.getDisplay());
+        }
+
     }
 }
 

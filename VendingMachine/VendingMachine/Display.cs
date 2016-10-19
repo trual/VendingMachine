@@ -35,5 +35,10 @@ namespace VendingMachine
             onScreen = "THANK YOU";
 
         }
+
+        public void price(decimal item)
+        {
+            onScreen = item.ToString();
+        }
     }
 }

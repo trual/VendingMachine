@@ -45,6 +45,10 @@ namespace VendingMachine
                 display.thankYou();
 
             }
+           else
+            {
+                display.price(inventory.items[item]);
+            }
         }
 
         //returns the quatity in the ivnentory of the item
