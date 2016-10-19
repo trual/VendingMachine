@@ -35,11 +35,11 @@ namespace VendingMachine
         //press inventory items
         public void pressItem(string item)
         {
-           if (inventory.pressItem(item))
+           if (inventory.pressItem(item, getCurrentAmount()))
             {
                 //the item is inventory and has been removed
                 //now its time to remove the money from the bank
-                bank.pressItem();
+                bank.pressItem(inventory.items[item]);
 
             }
         }
@@ -47,7 +47,7 @@ namespace VendingMachine
         //returns the quatity in the ivnentory of the item
         public int getQuantity(string item)
         {
-            return 0;
+            return inventory.getQuantity(item);
         }
 
 

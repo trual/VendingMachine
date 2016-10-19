@@ -80,6 +80,10 @@ namespace VendingMachine
         [TestMethod()]
         public void pressColaButton()
         {
+            VM.insertCoin("quarter");
+            VM.insertCoin("quarter");
+            VM.insertCoin("quarter");
+            VM.insertCoin("quarter");
             VM.pressItem("cola");
             Assert.AreEqual(0, VM.getQuantity("cola"));
         }
