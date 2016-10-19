@@ -118,6 +118,19 @@ namespace VendingMachine
 
         }
 
+        [TestMethod()]
+        public void buySomeChipsAndGetYourMoneyReturned()
+        {
+            VM.insertCoin("quarter");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.insertCoin("dime");
+            VM.pressItem("chips");
+            Assert.AreEqual(0, VM.getQuantity("chips"));
+            Assert.AreEqual(0.0m, VM.getCurrentAmount());
+
+        }
+
     }
 }
 
