@@ -64,6 +64,18 @@ namespace VendingMachine
             Assert.AreEqual("INSERT COIN", VM.getDisplay());
 
         }
+        [TestMethod()]
+        public void insertAndReturnNickelDimeQuarter()
+        {
+            VM.insertCoin("nickel");
+            VM.insertCoin("dime");
+            VM.insertCoin("quarter");
+            Assert.AreEqual("0.40", VM.getDisplay());
+            VM.returnCoin();
+            Assert.AreEqual(0.0m, VM.getCurrentAmount());
+            Assert.AreEqual("INSERT COIN", VM.getDisplay());
+
+        }
     }
 }
 

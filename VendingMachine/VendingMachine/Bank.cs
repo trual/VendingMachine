@@ -72,6 +72,16 @@ namespace VendingMachine
                     quarters -= 1;
                     currentAmount -= 0.25m;
                 }
+                else if (currentAmount >= 0.10m && dimes > 0)
+                {
+                    dimes -= 1;
+                    currentAmount -= 0.10m;
+                }
+                else if (currentAmount >= 0.05m && nickels > 0)
+                {
+                    nickels -= 1;
+                    currentAmount -= 0.05m;
+                }
             }
         }
 
