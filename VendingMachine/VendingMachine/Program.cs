@@ -28,6 +28,13 @@ namespace VendingMachine
                     Console.ReadLine();
                     VM.updateDisplay();
                 }
+                if (VM.getCurrentAmount().ToString() != VM.getDisplay())
+                {
+                    //then there isn't enough money to buy the item
+                    Console.WriteLine(VM.getDisplay());
+                    Console.ReadLine();
+                    VM.updateDisplay();
+                }
                 if (VM.getDisplay() == "Invalid Input")
                 {
                     Console.WriteLine(VM.getDisplay());
