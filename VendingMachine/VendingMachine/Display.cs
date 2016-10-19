@@ -45,5 +45,10 @@ namespace VendingMachine
         {
             onScreen = "SOLD OUT";
         }
+
+        public void invalidChoice()
+        {
+            onScreen = "Invalid Input";
+        }
     }
 }

@@ -121,6 +121,11 @@ namespace VendingMachine
             {
                 returnCoin();
             }
+            else
+            {
+                //invalid choice
+                display.invalidChoice();
+            }
             // need to check if return coins
         }
     }

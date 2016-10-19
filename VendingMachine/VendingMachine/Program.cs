@@ -27,6 +27,16 @@ namespace VendingMachine
                     Console.ReadLine();
                     VM.updateDisplay();
                 }
+                if (VM.getDisplay() == "Invalid Input")
+                {
+                    Console.WriteLine(VM.getDisplay());
+                    Console.WriteLine("Coin options : penny, nickel, dime, or quarter");
+                    Console.WriteLine("Item Options : cola, candy, chips");
+                    Console.WriteLine("RETURN to return coins.");
+                    Console.WriteLine("press enter to continue.");
+                    Console.ReadLine();
+                    VM.updateDisplay();
+                }
             }
 
         }
