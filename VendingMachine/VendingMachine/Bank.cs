@@ -86,6 +86,12 @@ namespace VendingMachine
         }
 
 
+        //pressitem, it is already valid for an item to be removed. 
+        public void pressItem()
+        {
+
+        }
+
         public int getNickels()
         {
             return nickels;

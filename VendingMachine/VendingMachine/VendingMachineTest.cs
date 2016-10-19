@@ -76,6 +76,13 @@ namespace VendingMachine
             Assert.AreEqual("INSERT COIN", VM.getDisplay());
 
         }
+        //press inventory buttons
+        [TestMethod()]
+        public void pressColaButton()
+        {
+            VM.pressItem("cola");
+            Assert.AreEqual(0, VM.getQuantity("cola"));
+        }
     }
 }
 

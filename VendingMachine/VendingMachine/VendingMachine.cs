@@ -12,6 +12,8 @@ namespace VendingMachine
         private Bank bank = new Bank();
         //keeps track of the display screen
         private Display display = new Display();
+        //keeps track of the inventory
+        private Inventory inventory = new Inventory();
 
         //handles when a coin is inserted into the VM
         public void insertCoin(string coin)
@@ -30,7 +32,23 @@ namespace VendingMachine
         }
        
 
+        //press inventory items
+        public void pressItem(string item)
+        {
+           if (inventory.pressItem(item))
+            {
+                //the item is inventory and has been removed
+                //now its time to remove the money from the bank
+                bank.pressItem();
 
+            }
+        }
+
+        //returns the quatity in the ivnentory of the item
+        public int getQuantity(string item)
+        {
+            return 0;
+        }
 
 
         //returns the display screen
