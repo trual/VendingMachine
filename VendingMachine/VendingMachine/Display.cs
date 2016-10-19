@@ -29,5 +29,11 @@ namespace VendingMachine
         {
             return onScreen;
         }
+
+        public void thankYou()
+        {
+            onScreen = "THANK YOU";
+
+        }
     }
 }

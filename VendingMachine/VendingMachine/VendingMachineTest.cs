@@ -128,6 +128,7 @@ namespace VendingMachine
             VM.pressItem("chips");
             Assert.AreEqual(0, VM.getQuantity("chips"));
             Assert.AreEqual(0.0m, VM.getCurrentAmount());
+            Assert.AreEqual("THANK YOU", VM.getDisplay());
 
         }
 
